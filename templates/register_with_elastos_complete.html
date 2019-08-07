@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Register with Elastos</title>
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h4>Register with Elastos</h4>
+        <br>
+        <form action="" method="post">
+            <dl>              
+                <dt><label for="name">Name</label>
+                <dd><input class="form-control" id="name" name="name" type="text" value="{{ session['elaDidInfo']['Nickname'] }}"></dd>
+                                
+                <dt><label for="email">Email Address</label>
+                <dd><input class="form-control" id="email" name="email" type="text" value="{{ session['elaDidInfo']['Email'] }}"></dd>
+
+                <dt><label for="did">DID</label>
+                <dd><input class="form-control" id="did" name="did" type="text" value="{{ session['elaDidInfo']['DID'] }}" readonly></dd>
+            </dl>
+            <p>
+                <input class="btn btn-default" type="submit" value="Register">
+            </p> 
+        </form>
+
+        <p>
+            <a href="{{ url_for('login') }}">
+                <input class="btn btn-primary" type=”button” value="Login">
+            </a>
+        </p>
+
+        {% if error %}
+        <p class="error"><strong>Error:</strong>{{error}}</p>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>

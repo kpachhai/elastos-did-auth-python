@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <ul class="nav navbar-nav navbar-right">
+            <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"
+                class="container-fluid">
+                <h5>
+                    {% if session.logged_in %}
+                    <div>You're already logged in</div>
+                    <a href="{{ url_for('logout') }}">
+                        <input class="btn btn-default" type="button" value="Logout"></a>
+                    <a href="{{ url_for('account') }}">
+                        <input class="btn btn-default" type="button" value="Account"></a>
+                    {% else %}
+                    <a href="/">
+                        <input class="btn btn-default" type="button" value="Sign up"></a>
+                    {% endif %}
+                </h5>
+            </div>
+        </ul>
+    </header>
+    <div class="container">
+        <br>
+        <h4>Please Login:</h4>
+        <br>
+        <form action="" method="post">
+            <input type="text" class="form-control" placeholder="Name" name="name"
+                value="{{request.form.name}}"><br>
+            <input type="password" class="form-control" placeholder="Password" name="password"
+                value="{{request.form.password}}"><br>
+            <p>
+                <input class="btn btn-default" type="submit" value="Login">
+                <a href="{{ url_for('login_with_elastos') }}">
+                    <input class="btn btn-default" type=”button” value="Login with Elastos">
+                </a>
+            </p>
+        </form>
+
+        {% if error %}
+        <p class="error"><strong>Error:</strong>{{error}}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

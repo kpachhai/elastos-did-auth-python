@@ -1,0 +1,7 @@
+wtforms
+flask
+flask-wtf
+MySQL-python
+passlib
+fastecdsa
+Flask-QR

@@ -5,3 +5,4 @@ MySQL-python
 passlib
 fastecdsa
 Flask-QR
+python-dotenv

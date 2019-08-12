@@ -26,5 +26,5 @@ def bytes_to_int(bytestr):
     """Make an integer from a big endian bytestring."""
     value = 0
     for i in range(len(bytestr)):
-        value = value * 256 + bytestr[i]
+        value = value * 256 + indexbytes(bytestr, i)
     return value

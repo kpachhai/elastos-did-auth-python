@@ -4,6 +4,7 @@ from wtforms import Form, TextField, PasswordField, validators
 
 from fastecdsa.encoding.sec1 import SEC1Encoder
 from fastecdsa import ecdsa, curve
+from binascii import unhexlify
 
 from urllib import urlencode
 from flask_qr import QR
@@ -121,7 +122,7 @@ def did_callback():
         client_public_key = data_json['PublicKey']
 
         r, s = int(sig[:64],16), int(sig[64:], 16)
-        public_key = SEC1Encoder.decode_public_key(bytearray.fromhex(client_public_key), curve.P256)
+        public_key = SEC1Encoder.decode_public_key(unhexlify(client_public_key), curve.P256)
         valid = ecdsa.verify((r, s), data, public_key)
         if not valid:
             return jsonify({'message': 'Unauthorized'}), 401

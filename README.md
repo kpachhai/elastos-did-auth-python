@@ -4,7 +4,5 @@
 
 ## How to run
 - `cp .env.dist didauth/.env` and edit didauth/.env to your own settings
+- `pip install -t vendorlib -r requirements.txt`
 - `./run.sh`
-
-## Developers
-- Build: `pip install -t vendorlib -r requirements.txt`

@@ -16,3 +16,6 @@
 - Click on "Register". This will register your user to the mysql database. As soon as you click "Register", you're taken to your "Account" page that displays your profile info now retrieved from your database. This means your data was registered and saved properly
 ![Account Page](./github_images/account.png)
 - You can also choose to logout by clicking on "Logout" from the top
+
+## What now?
+- Now that you have learned how the DID login works on a website using Elephant wallet, you can check out the python code that was used to build this website. It's written using Python Flask Framework so, you can copy paste the relevant code onto your own app and start developing! Good luck!
